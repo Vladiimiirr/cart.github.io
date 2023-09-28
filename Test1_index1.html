@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<body>
+   <h2><a href="Test1.html" id="myLink">Назад</a></h2>
+  <img src="Sait\Formls7\SHG\SHG1.png" style="cursor:pointer" width="300" height="500" id="SHG1">
+  <img src="Sait\Formls7\SHG\SHG2.png" style="cursor:pointer" width="300" height="500" id="SHG2">
+  <img src="Sait\Formls7\SHG\SHG3.png" style="cursor:pointer" width="300" height="500" id="SHG3">
+  <img src="Sait\Formls7\SHG\SHG4.png" style="cursor:pointer" width="300" height="500" id="SHG4">
+  <img src="Sait\Formls7\SHG\SHG5.png" style="cursor:pointer" width="300" height="500" id="SHG5">
+  <img src="Sait\Formls7\SHG\SHG6.png" style="cursor:pointer" width="300" height="500" id="SHG6">
+  <img src="Sait\Formls7\SHG\SHG7.png" style="cursor:pointer" width="300" height="500" id="SHG7">
+  <img src="Sait\Formls7\SHG\SHG8.png" style="cursor:pointer" width="300" height="500" id="SHG8">
+  <img src="Sait\Formls7\SHG\SHG9.png" style="cursor:pointer" width="300" height="500" id="SHG9">
+  <img src="Sait\Formls7\SHG\SHG10.png" style="cursor:pointer" width="300" height="500" id="SHG10">
+  <img src="Sait\Formls7\SHG\SHG11.png" style="cursor:pointer" width="300" height="500" id="SHG11">
+  <img src="Sait\Formls7\SHG\SHG12.png" style="cursor:pointer" width="300" height="500" id="SHG12">
+  
+
+  <script>
+
+	
+	let d = ['SHG1', 'SHG2', 'SHG3', 'SHG4', 'SHG5', 'SHG6', 'SHG7', 'SHG8', 'SHG9', 'SHG10', 'SHG11', 'SHG12'];
+	let a = [];
+	for(let i = 0; i < d.length; i++){
+	
+		a[i] = document.getElementById(d[i]);
+		
+		
+		a[i].onmousedown = function(e) 
+		{
+
+		  var coords = getCoords(a[i]);
+		  var shiftX = e.pageX - coords.left;
+		  var shiftY = e.pageY - coords.top;
+
+		  a[i].style.position = 'absolute';
+		  document.body.appendChild(a[i]);
+		  moveAt(e);
+
+		  a[i].style.zIndex = 1000; // над другими элементами
+
+		  function moveAt(e) {
+			a[i].style.left = e.pageX - shiftX + 'px';
+			a[i].style.top = e.pageY - shiftY + 'px';
+		  }
+
+		  document.onmousemove = function(e) {
+			moveAt(e);
+		  };
+
+		  a[i].onmouseup = function() {
+			document.onmousemove = null;
+			a[i].onmouseup = null;
+		  };
+
+		}
+
+		a[i].ondragstart = function() {
+		  return false;
+		};
+	}
+
+    function getCoords(elem) { // кроме IE8-
+      var box = elem.getBoundingClientRect();
+
+      return {
+        top: box.top + pageYOffset,
+        left: box.left + pageXOffset
+      };
+
+    }
+	
+	document.getElementById("myLink").onclick = function() {
+    confirm("Сделали фото выложенных карт?");
+	}
+  </script>
+
+
+</body>
+
+

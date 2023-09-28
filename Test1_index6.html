@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<body>
+  <h2><a href="Test1.html" id="myLink">Назад</a></h2>
+  <img src="Sait\Formls7\Y\Y1.png" style="cursor:pointer" width="300" height="500" id="Y1">
+  <img src="Sait\Formls7\Y\Y2.png" style="cursor:pointer" width="300" height="500" id="Y2">
+  <img src="Sait\Formls7\Y\Y3.png" style="cursor:pointer" width="300" height="500" id="Y3">
+  <img src="Sait\Formls7\Y\Y4.png" style="cursor:pointer" width="300" height="500" id="Y4">
+  <img src="Sait\Formls7\Y\Y5.png" style="cursor:pointer" width="300" height="500" id="Y5">
+  <img src="Sait\Formls7\Y\Y6.png" style="cursor:pointer" width="300" height="500" id="Y6">
+  <img src="Sait\Formls7\Y\Y7.png" style="cursor:pointer" width="300" height="500" id="Y7">
+  <img src="Sait\Formls7\Y\Y8.png" style="cursor:pointer" width="300" height="500" id="Y8">
+  <img src="Sait\Formls7\Y\Y9.png" style="cursor:pointer" width="300" height="500" id="Y9">
+
+  <script>
+
+	
+	let d = ['Y1', 'Y2', 'Y3', 'Y4', 'Y5', 'Y6', 'Y7', 'Y8', 'Y9'];
+	let a = [];
+	for(let i = 0; i < d.length; i++){
+	
+		a[i] = document.getElementById(d[i]);
+		
+		
+		a[i].onmousedown = function(e) 
+		{
+
+		  var coords = getCoords(a[i]);
+		  var shiftX = e.pageX - coords.left;
+		  var shiftY = e.pageY - coords.top;
+
+		  a[i].style.position = 'absolute';
+		  document.body.appendChild(a[i]);
+		  moveAt(e);
+
+		  a[i].style.zIndex = 1000; // над другими элементами
+
+		  function moveAt(e) {
+			a[i].style.left = e.pageX - shiftX + 'px';
+			a[i].style.top = e.pageY - shiftY + 'px';
+		  }
+
+		  document.onmousemove = function(e) {
+			moveAt(e);
+		  };
+
+		  a[i].onmouseup = function() {
+			document.onmousemove = null;
+			a[i].onmouseup = null;
+		  };
+
+		}
+
+		a[i].ondragstart = function() {
+		  return false;
+		};
+	}
+
+    function getCoords(elem) { // кроме IE8-
+      var box = elem.getBoundingClientRect();
+
+      return {
+        top: box.top + pageYOffset,
+        left: box.left + pageXOffset
+      };
+
+    }
+	
+	document.getElementById("myLink").onclick = function() {
+    confirm("Сделали фото выложенных карт?");
+	}
+  </script>
+
+
+</body>
