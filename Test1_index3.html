@@ -1,16 +1,25 @@
 <!doctype html>
 <html>
-<body>
+<body scroll="no">
    <h2><a href="Test1.html" id="myLink">Назад</a></h2>
-  <img src="Sait\Formls7\O\O1.png" style="cursor:pointer" width="300" height="500" id="O1">
-  <img src="Sait\Formls7\O\O2.png" style="cursor:pointer" width="300" height="500" id="O2">
-  <img src="Sait\Formls7\O\O3.png" style="cursor:pointer" width="300" height="500" id="O3">
-  <img src="Sait\Formls7\O\O4.png" style="cursor:pointer" width="300" height="500" id="O4">
-  <img src="Sait\Formls7\O\O5.png" style="cursor:pointer" width="300" height="500" id="O5">
-  <img src="Sait\Formls7\O\O6.png" style="cursor:pointer" width="300" height="500" id="O6">
-  <img src="Sait\Formls7\O\O7.png" style="cursor:pointer" width="300" height="500" id="O7">
-  <img src="Sait\Formls7\O\O8.png" style="cursor:pointer" width="300" height="500" id="O8">
-  <img src="Sait\Formls7\O\O9.png" style="cursor:pointer" width="300" height="500" id="O9">
+   <style>
+   div {
+    width: 3500px;	height: 600px; /* Размеры */
+    background: #fc0; /* Цвет фона */
+    outline: 2px solid #000; /* Чёрная рамка */
+    border: 3px solid #fff; /* Белая рамка */
+    border-radius: 10px; /* Радиус скругления */
+   }
+   </style>
+  <img src="Sait\Formls7\O\O1.png" style="cursor:pointer; left: 0px; top: 700px;  position: absolute;" width="300" height="500" id="O1">
+  <img src="Sait\Formls7\O\O2.png" style="cursor:pointer; left: 300px; top: 700px; position: absolute;" width="300" height="500" id="O2">
+  <img src="Sait\Formls7\O\O3.png" style="cursor:pointer; left: 600px; top: 700px; position: absolute;" width="300" height="500" id="O3">
+  <img src="Sait\Formls7\O\O4.png" style="cursor:pointer; left: 0px; top: 1200px; position: absolute;" width="300" height="500" id="O4">
+  <img src="Sait\Formls7\O\O5.png" style="cursor:pointer; left: 300px; top: 1200px; position: absolute;" width="300" height="500" id="O5">
+  <img src="Sait\Formls7\O\O6.png" style="cursor:pointer; left: 600px; top: 1200px; position: absolute;" width="300" height="500" id="O6">
+  <img src="Sait\Formls7\O\O7.png" style="cursor:pointer; left: 0px; top: 1700px; position: absolute;" width="300" height="500" id="O7">
+  <img src="Sait\Formls7\O\O8.png" style="cursor:pointer; left: 300px; top: 1700px; position: absolute;" width="300" height="500" id="O8">
+  <img src="Sait\Formls7\O\O9.png" style="cursor:pointer; left: 600px; top: 1700px; position: absolute;" width="300" height="500" id="O9">
 
   <script>
 
@@ -21,7 +30,14 @@
 	
 		a[i] = document.getElementById(d[i]);
 		
+		a[i].addEventListener('touchmove', function(event) {
+		var touch = event.targetTouches[0];
 		
+		// Place element where the finger is
+		a[i].style.left = touch.pageX-25 + 'px';
+		a[i].style.top = touch.pageY-25 + 'px';
+		event.preventDefault();
+	  }, false);
 		a[i].onmousedown = function(e) 
 		{
 

@@ -1,19 +1,30 @@
 <!doctype html>
 <html>
-<body>
+<body scroll="no">
    <h2><a href="Test1.html" id="myLink">Назад</a></h2>
-  <img src="Sait\Formls7\SHG\SHG1.png" style="cursor:pointer" width="300" height="500" id="SHG1">
-  <img src="Sait\Formls7\SHG\SHG2.png" style="cursor:pointer" width="300" height="500" id="SHG2">
-  <img src="Sait\Formls7\SHG\SHG3.png" style="cursor:pointer" width="300" height="500" id="SHG3">
-  <img src="Sait\Formls7\SHG\SHG4.png" style="cursor:pointer" width="300" height="500" id="SHG4">
-  <img src="Sait\Formls7\SHG\SHG5.png" style="cursor:pointer" width="300" height="500" id="SHG5">
-  <img src="Sait\Formls7\SHG\SHG6.png" style="cursor:pointer" width="300" height="500" id="SHG6">
-  <img src="Sait\Formls7\SHG\SHG7.png" style="cursor:pointer" width="300" height="500" id="SHG7">
-  <img src="Sait\Formls7\SHG\SHG8.png" style="cursor:pointer" width="300" height="500" id="SHG8">
-  <img src="Sait\Formls7\SHG\SHG9.png" style="cursor:pointer" width="300" height="500" id="SHG9">
-  <img src="Sait\Formls7\SHG\SHG10.png" style="cursor:pointer" width="300" height="500" id="SHG10">
-  <img src="Sait\Formls7\SHG\SHG11.png" style="cursor:pointer" width="300" height="500" id="SHG11">
-  <img src="Sait\Formls7\SHG\SHG12.png" style="cursor:pointer" width="300" height="500" id="SHG12">
+   <style>
+   div {
+    width: 3500px;	height: 600px; /* Размеры */
+    background: #fc0; /* Цвет фона */
+    outline: 2px solid #000; /* Чёрная рамка */
+    border: 3px solid #fff; /* Белая рамка */
+    border-radius: 10px; /* Радиус скругления */
+   }
+   </style>
+   
+
+  <img src="Sait\Formls7\SHG\SHG1.png" style="cursor:pointer; left: 0px; top: 700px;  position: absolute;" width="300" height="500" id="SHG1">
+  <img src="Sait\Formls7\SHG\SHG2.png" style="cursor:pointer; left: 300px; top: 700px; position: absolute;" width="300" height="500" id="SHG2">
+  <img src="Sait\Formls7\SHG\SHG3.png" style="cursor:pointer; left: 600px; top: 700px; position: absolute;" width="300" height="500" id="SHG3">
+  <img src="Sait\Formls7\SHG\SHG4.png" style="cursor:pointer; left: 0px; top: 1200px; position: absolute;" width="300" height="500" id="SHG4">
+  <img src="Sait\Formls7\SHG\SHG5.png" style="cursor:pointer; left: 300px; top: 1200px; position: absolute;" width="300" height="500" id="SHG5">
+  <img src="Sait\Formls7\SHG\SHG6.png" style="cursor:pointer; left: 600px; top: 1200px; position: absolute;" width="300" height="500" id="SHG6">
+  <img src="Sait\Formls7\SHG\SHG7.png" style="cursor:pointer; left: 0px; top: 1700px; position: absolute;" width="300" height="500" id="SHG7">
+  <img src="Sait\Formls7\SHG\SHG8.png" style="cursor:pointer; left: 300px; top: 1700px; position: absolute;" width="300" height="500" id="SHG8">
+  <img src="Sait\Formls7\SHG\SHG9.png" style="cursor:pointer; left: 600px; top: 1700px; position: absolute;" width="300" height="500" id="SHG9">
+  <img src="Sait\Formls7\SHG\SHG10.png" style="cursor:pointer; left: 0px; top: 2200px; position: absolute;" width="300" height="500" id="SHG10">
+  <img src="Sait\Formls7\SHG\SHG11.png" style="cursor:pointer; left: 300px; top: 2200px; position: absolute;" width="300" height="500" id="SHG11">
+  <img src="Sait\Formls7\SHG\SHG12.png" style="cursor:pointer; left: 600px; top: 2200px; position: absolute;" width="300" height="500" id="SHG12">
   
 
   <script>
@@ -24,8 +35,16 @@
 	for(let i = 0; i < d.length; i++){
 	
 		a[i] = document.getElementById(d[i]);
+			
+		a[i].addEventListener('touchmove', function(event) {
+		var touch = event.targetTouches[0];
 		
-		
+		// Place element where the finger is
+		a[i].style.left = touch.pageX-25 + 'px';
+		a[i].style.top = touch.pageY-25 + 'px';
+		event.preventDefault();
+	  }, false);
+			
 		a[i].onmousedown = function(e) 
 		{
 

@@ -1,16 +1,25 @@
 <!doctype html>
 <html>
-<body>
+<body scroll="no">
+   <style>
+   div {
+    width: 3500px;	height: 600px; /* Размеры */
+    background: #fc0; /* Цвет фона */
+    outline: 2px solid #000; /* Чёрная рамка */
+    border: 3px solid #fff; /* Белая рамка */
+    border-radius: 10px; /* Радиус скругления */
+   }
+   </style>
    <h2><a href="Test1.html" id="myLink">Назад</a></h2>
-  <img src="Sait\Formls7\K\K1.png" style="cursor:pointer" width="300" height="500" id="K1">
-  <img src="Sait\Formls7\K\K2.png" style="cursor:pointer" width="300" height="500" id="K2">
-  <img src="Sait\Formls7\K\K3.png" style="cursor:pointer" width="300" height="500" id="K3">
-  <img src="Sait\Formls7\K\K4.png" style="cursor:pointer" width="300" height="500" id="K4">
-  <img src="Sait\Formls7\K\K5.png" style="cursor:pointer" width="300" height="500" id="K5">
-  <img src="Sait\Formls7\K\K6.png" style="cursor:pointer" width="300" height="500" id="K6">
-  <img src="Sait\Formls7\K\K7.png" style="cursor:pointer" width="300" height="500" id="K7">
-  <img src="Sait\Formls7\K\K8.png" style="cursor:pointer" width="300" height="500" id="K8">
-  <img src="Sait\Formls7\K\K9.png" style="cursor:pointer" width="300" height="500" id="K9">
+  <img src="Sait\Formls7\K\K1.png" style="cursor:pointer; left: 0px; top: 700px;  position: absolute;" width="300" height="500" id="K1">
+  <img src="Sait\Formls7\K\K2.png" style="cursor:pointer; left: 300px; top: 700px; position: absolute;" width="300" height="500" id="K2">
+  <img src="Sait\Formls7\K\K3.png" style="cursor:pointer; left: 600px; top: 700px; position: absolute;" width="300" height="500" id="K3">
+  <img src="Sait\Formls7\K\K4.png" style="cursor:pointer; left: 0px; top: 1200px; position: absolute;" width="300" height="500" id="K4">
+  <img src="Sait\Formls7\K\K5.png" style="cursor:pointer; left: 300px; top: 1200px; position: absolute;" width="300" height="500" id="K5">
+  <img src="Sait\Formls7\K\K6.png" style="cursor:pointer; left: 600px; top: 1200px; position: absolute;" width="300" height="500" id="K6">
+  <img src="Sait\Formls7\K\K7.png" style="cursor:pointer; left: 0px; top: 1700px; position: absolute;" width="300" height="500" id="K7">
+  <img src="Sait\Formls7\K\K8.png" style="cursor:pointer; left: 300px; top: 1700px; position: absolute;" width="300" height="500" id="K8">
+  <img src="Sait\Formls7\K\K9.png" style="cursor:pointer; left: 600px; top: 1700px; position: absolute;" width="300" height="500" id="K9">
 
   <script>
 
@@ -20,7 +29,14 @@
 	for(let i = 0; i < d.length; i++){
 	
 		a[i] = document.getElementById(d[i]);
+		a[i].addEventListener('touchmove', function(event) {
+		var touch = event.targetTouches[0];
 		
+		// Place element where the finger is
+		a[i].style.left = touch.pageX-25 + 'px';
+		a[i].style.top = touch.pageY-25 + 'px';
+		event.preventDefault();
+	  }, false);
 		
 		a[i].onmousedown = function(e) 
 		{

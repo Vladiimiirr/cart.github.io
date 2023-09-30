@@ -1,16 +1,26 @@
 <!doctype html>
 <html>
-<body>
+<body scroll="no">
+   <style>
+	   div {
+		width: 3500px;	height: 600px; /* Размеры */
+		background: #fc0; /* Цвет фона */
+		outline: 2px solid #000; /* Чёрная рамка */
+		border: 3px solid #fff; /* Белая рамка */
+		border-radius: 10px; /* Радиус скругления */
+	   }
+   </style>
+
   <h2><a href="Test1.html" id="myLink">Назад</a></h2>
-  <img src="Sait\Formls7\Y\Y1.png" style="cursor:pointer" width="300" height="500" id="Y1">
-  <img src="Sait\Formls7\Y\Y2.png" style="cursor:pointer" width="300" height="500" id="Y2">
-  <img src="Sait\Formls7\Y\Y3.png" style="cursor:pointer" width="300" height="500" id="Y3">
-  <img src="Sait\Formls7\Y\Y4.png" style="cursor:pointer" width="300" height="500" id="Y4">
-  <img src="Sait\Formls7\Y\Y5.png" style="cursor:pointer" width="300" height="500" id="Y5">
-  <img src="Sait\Formls7\Y\Y6.png" style="cursor:pointer" width="300" height="500" id="Y6">
-  <img src="Sait\Formls7\Y\Y7.png" style="cursor:pointer" width="300" height="500" id="Y7">
-  <img src="Sait\Formls7\Y\Y8.png" style="cursor:pointer" width="300" height="500" id="Y8">
-  <img src="Sait\Formls7\Y\Y9.png" style="cursor:pointer" width="300" height="500" id="Y9">
+  <img src="Sait\Formls7\Y\Y1.png" style="cursor:pointer; left: 0px; top: 700px; position: absolute;" width="300" height="500" id="Y1">
+  <img src="Sait\Formls7\Y\Y2.png" style="cursor:pointer; left: 300px; top: 700px; position: absolute;" width="300" height="500" id="Y2">
+  <img src="Sait\Formls7\Y\Y3.png" style="cursor:pointer; left: 600px; top: 700px; position: absolute;" width="300" height="500" id="Y3">
+  <img src="Sait\Formls7\Y\Y4.png" style="cursor:pointer; left: 0px; top: 1200px; position: absolute;" width="300" height="500" id="Y4">
+  <img src="Sait\Formls7\Y\Y5.png" style="cursor:pointer; left: 300px; top: 1200px; position: absolute;" width="300" height="500" id="Y5">
+  <img src="Sait\Formls7\Y\Y6.png" style="cursor:pointer; left: 600px; top: 1200px; position: absolute;" width="300" height="500" id="Y6">
+  <img src="Sait\Formls7\Y\Y7.png" style="cursor:pointer; left: 0px; top: 1700px; position: absolute;" width="300" height="500" id="Y7">
+  <img src="Sait\Formls7\Y\Y8.png" style="cursor:pointer; left: 300px; top: 1700px; position: absolute;" width="300" height="500" id="Y8">
+  <img src="Sait\Formls7\Y\Y9.png" style="cursor:pointer; left: 600px; top: 1700px; position: absolute;" width="300" height="500" id="Y9">
 
   <script>
 
@@ -21,7 +31,14 @@
 	
 		a[i] = document.getElementById(d[i]);
 		
+		a[i].addEventListener('touchmove', function(event) {
+		var touch = event.targetTouches[0];
 		
+		// Place element where the finger is
+		a[i].style.left = touch.pageX-25 + 'px';
+		a[i].style.top = touch.pageY-25 + 'px';
+		event.preventDefault();
+	  }, false);
 		a[i].onmousedown = function(e) 
 		{
 
