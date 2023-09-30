@@ -11,25 +11,31 @@
     border-radius: 10px; /* Радиус скругления */
    }
    </style>
-  <img src="Sait\Formls7\O\O1.png" style="cursor:pointer; left: 0px; top: 700px;  position: absolute;" width="300" height="500" id="O1">
-  <img src="Sait\Formls7\O\O2.png" style="cursor:pointer; left: 300px; top: 700px; position: absolute;" width="300" height="500" id="O2">
-  <img src="Sait\Formls7\O\O3.png" style="cursor:pointer; left: 600px; top: 700px; position: absolute;" width="300" height="500" id="O3">
-  <img src="Sait\Formls7\O\O4.png" style="cursor:pointer; left: 0px; top: 1200px; position: absolute;" width="300" height="500" id="O4">
-  <img src="Sait\Formls7\O\O5.png" style="cursor:pointer; left: 300px; top: 1200px; position: absolute;" width="300" height="500" id="O5">
-  <img src="Sait\Formls7\O\O6.png" style="cursor:pointer; left: 600px; top: 1200px; position: absolute;" width="300" height="500" id="O6">
-  <img src="Sait\Formls7\O\O7.png" style="cursor:pointer; left: 0px; top: 1700px; position: absolute;" width="300" height="500" id="O7">
-  <img src="Sait\Formls7\O\O8.png" style="cursor:pointer; left: 300px; top: 1700px; position: absolute;" width="300" height="500" id="O8">
-  <img src="Sait\Formls7\O\O9.png" style="cursor:pointer; left: 600px; top: 1700px; position: absolute;" width="300" height="500" id="O9">
+   
+
+  <img src="Formls7\SHG\SHG1.png" style="cursor:pointer; left: 0px; top: 700px;  position: absolute;" width="300" height="500" id="SHG1">
+  <img src="Formls7\SHG\SHG2.png" style="cursor:pointer; left: 300px; top: 700px; position: absolute;" width="300" height="500" id="SHG2">
+  <img src="Formls7\SHG\SHG3.png" style="cursor:pointer; left: 600px; top: 700px; position: absolute;" width="300" height="500" id="SHG3">
+  <img src="Formls7\SHG\SHG4.png" style="cursor:pointer; left: 0px; top: 1200px; position: absolute;" width="300" height="500" id="SHG4">
+  <img src="Formls7\SHG\SHG5.png" style="cursor:pointer; left: 300px; top: 1200px; position: absolute;" width="300" height="500" id="SHG5">
+  <img src="Formls7\SHG\SHG6.png" style="cursor:pointer; left: 600px; top: 1200px; position: absolute;" width="300" height="500" id="SHG6">
+  <img src="Formls7\SHG\SHG7.png" style="cursor:pointer; left: 0px; top: 1700px; position: absolute;" width="300" height="500" id="SHG7">
+  <img src="Formls7\SHG\SHG8.png" style="cursor:pointer; left: 300px; top: 1700px; position: absolute;" width="300" height="500" id="SHG8">
+  <img src="Formls7\SHG\SHG9.png" style="cursor:pointer; left: 600px; top: 1700px; position: absolute;" width="300" height="500" id="SHG9">
+  <img src="Formls7\SHG\SHG10.png" style="cursor:pointer; left: 0px; top: 2200px; position: absolute;" width="300" height="500" id="SHG10">
+  <img src="Formls7\SHG\SHG11.png" style="cursor:pointer; left: 300px; top: 2200px; position: absolute;" width="300" height="500" id="SHG11">
+  <img src="Formls7\SHG\SHG12.png" style="cursor:pointer; left: 600px; top: 2200px; position: absolute;" width="300" height="500" id="SHG12">
+  
 
   <script>
 
 	
-	let d = ['O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'O7', 'O8', 'O9'];
+	let d = ['SHG1', 'SHG2', 'SHG3', 'SHG4', 'SHG5', 'SHG6', 'SHG7', 'SHG8', 'SHG9', 'SHG10', 'SHG11', 'SHG12'];
 	let a = [];
 	for(let i = 0; i < d.length; i++){
 	
 		a[i] = document.getElementById(d[i]);
-		
+			
 		a[i].addEventListener('touchmove', function(event) {
 		var touch = event.targetTouches[0];
 		
@@ -38,6 +44,7 @@
 		a[i].style.top = touch.pageY-25 + 'px';
 		event.preventDefault();
 	  }, false);
+			
 		a[i].onmousedown = function(e) 
 		{
 
@@ -89,3 +96,5 @@
 
 
 </body>
+
+

@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<body scroll="no">
+
+	<style>
+		   div {
+			width: 3500px;	height: 600px; /* Размеры */
+			background: #fc0; /* Цвет фона */
+			outline: 2px solid #000; /* Чёрная рамка */
+			border: 3px solid #fff; /* Белая рамка */
+			border-radius: 10px; /* Радиус скругления */
+		   }
+	</style>
+	
+   <h2><a href="Test2.html" id="myLink">Назад</a></h2>
+	 <img src="WhyWhat\K\K1.png" style="cursor:pointer; left:   0px; top: 700px; position: absolute;" width="300" height="500" id="K1">
+	 <img src="WhyWhat\K\K2.png" style="cursor:pointer; left:   300px; top: 700px; position: absolute;" width="300" height="500" id="K2">
+	 <img src="WhyWhat\K\K3.png" style="cursor:pointer; left:   600px; top: 700px; position: absolute;" width="300" height="500" id="K3">
+	 <img src="WhyWhat\K\K4.png" style="cursor:pointer; left:   0px; top: 1200px; position: absolute;" width="300" height="500" id="K4">
+	 <img src="WhyWhat\K\K5.png" style="cursor:pointer; left:   300px; top: 1200px; position: absolute;" width="300" height="500" id="K5">
+	 <img src="WhyWhat\K\K6.png" style="cursor:pointer; left:   600px; top: 1200px; position: absolute;" width="300" height="500" id="K6">
+	 <img src="WhyWhat\K\K7.png" style="cursor:pointer; left:   0px; top: 1700px; position: absolute;" width="300" height="500" id="K7">
+	 <img src="WhyWhat\K\K8.png" style="cursor:pointer; left:   300px; top: 1700px; position: absolute;" width="300" height="500" id="K8">
+	 <img src="WhyWhat\K\K9.png" style="cursor:pointer; left:   600px; top: 1700px; position: absolute;" width="300" height="500" id="K9">
+	 <img src="WhyWhat\K\K10.png" style="cursor:pointer; left:   0px; top: 2200px; position: absolute;" width="300" height="500" id="K10">
+	 <img src="WhyWhat\K\K11.png" style="cursor:pointer; left:  300px; top: 2200px; position: absolute;" width="300" height="500" id="K11">
+	 <img src="WhyWhat\K\K12.png" style="cursor:pointer; left:   600px; top: 2200px; position: absolute;" width="300" height="500" id="K12">
+	 <img src="WhyWhat\K\K13.png" style="cursor:pointer; left:   0px; top: 2700px; position: absolute;" width="300" height="500" id="K13">
+	 <img src="WhyWhat\K\K14.png" style="cursor:pointer; left:   300px; top: 2700px; position: absolute;" width="300" height="500" id="K14">
+	 <img src="WhyWhat\K\K15.png" style="cursor:pointer; left:   600px; top: 2700px; position: absolute;" width="300" height="500" id="K15">
+	 <img src="WhyWhat\K\K16.png" style="cursor:pointer; left:   0px; top: 3200px; position: absolute;" width="300" height="500" id="K16">
+	 <img src="WhyWhat\K\K17.png" style="cursor:pointer; left:   300px; top: 3200px; position: absolute;" width="300" height="500" id="K17">
+	 <img src="WhyWhat\K\K18.png" style="cursor:pointer; left:   600px; top: 3200px; position: absolute;" width="300" height="500" id="K18">
+	 <img src="WhyWhat\K\K19.png" style="cursor:pointer; left:   0px; top: 3700px; position: absolute;" width="300" height="500" id="K19">
+	 <img src="WhyWhat\K\K20.png" style="cursor:pointer; left:   300px; top: 3700px; position: absolute;" width="300" height="500" id="K20">
+	 <img src="WhyWhat\K\K21.png" style="cursor:pointer; left:   600px; top: 3700px; position: absolute;" width="300" height="500" id="K21">
+	 <img src="WhyWhat\K\K22.png" style="cursor:pointer; left:   0px; top: 4200px; position: absolute;" width="300" height="500" id="K22">
+	 <img src="WhyWhat\K\K23.png" style="cursor:pointer; left:   300px; top: 4200px; position: absolute;" width="300" height="500" id="K23">
+	 <img src="WhyWhat\K\K24.png" style="cursor:pointer; left:   600px; top: 4200px; position: absolute;" width="300" height="500" id="K24">
+	 <img src="WhyWhat\K\K25.png" style="cursor:pointer; left:   0px; top: 4700px; position: absolute;" width="300" height="500" id="K25">
+	 <img src="WhyWhat\K\K26.png" style="cursor:pointer; left:   300px; top: 4700px; position: absolute;" width="300" height="500" id="K26">
+	 <img src="WhyWhat\K\K27.png" style="cursor:pointer; left:   600px; top: 4700px; position: absolute;" width="300" height="500" id="K27">
+
+  <script>
+
+	
+	let d = ['K1', 'K2', 'K3', 'K4', 'K5', 'K6', 'K7', 'K8', 'K9', 'K10', 'K11', 'K12', 'K13', 'K14', 'K15', 'K16', 'K17', 'K18', 'K19', 'K20', 'K21', 'K22', 'K23', 'K24', 'K25', 'K26', 'K27'];
+	let a = [];
+	for(let i = 0; i < d.length; i++){
+	
+		a[i] = document.getElementById(d[i]);
+		
+		a[i].addEventListener('touchmove', function(event) {
+		var touch = event.targetTouches[0];
+		
+		// Place element where the finger is
+		a[i].style.left = touch.pageX-25 + 'px';
+		a[i].style.top = touch.pageY-25 + 'px';
+		event.preventDefault();
+	  }, false);
+		a[i].onmousedown = function(e) 
+		{
+
+		  var coords = getCoords(a[i]);
+		  var shiftX = e.pageX - coords.left;
+		  var shiftY = e.pageY - coords.top;
+
+		  a[i].style.position = 'absolute';
+		  document.body.appendChild(a[i]);
+		  moveAt(e);
+
+		  a[i].style.zIndex = 1000; // над другими элементами
+
+		  function moveAt(e) {
+			a[i].style.left = e.pageX - shiftX + 'px';
+			a[i].style.top = e.pageY - shiftY + 'px';
+		  }
+
+		  document.onmousemove = function(e) {
+			moveAt(e);
+		  };
+
+		  a[i].onmouseup = function() {
+			document.onmousemove = null;
+			a[i].onmouseup = null;
+		  };
+
+		}
+
+		a[i].ondragstart = function() {
+		  return false;
+		};
+	}
+
+    function getCoords(elem) { // кроме IE8-
+      var box = elem.getBoundingClientRect();
+
+      return {
+        top: box.top + pageYOffset,
+        left: box.left + pageXOffset
+      };
+
+    }
+	
+	document.getElementById("myLink").onclick = function() {
+    confirm("Сделали фото выложенных карт?");
+	}
+  </script>
+
+
+</body>
+
+
