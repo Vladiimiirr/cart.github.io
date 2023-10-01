@@ -1,0 +1,53 @@
+.Main
+{
+	border: 0.35em solid blue;
+	width:80%;
+	margin: 50px 100px 5px 10%;
+	padding: 0px 0px 0px 0px;
+	justify-content: center;
+	background-color: #78DBE2;
+}
+.btnBegin
+{
+	background-color: darkblue;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 3px 3px gray;
+    padding: 15px 50px 15px 50px;
+	margin: 0px 0px 10px 40%;
+}
+.btnUp
+{
+	background-color: darkblue;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 3px 3px gray;
+    padding: 15px 50px 15px 50px;
+	margin: 0px 0px 10px 0px;
+	font-size: 50px;
+}
+
+.btnBegin:hover{
+     background: #6495ED;
+}
+
+.btnUp:hover{
+     background: #6495ED;
+}
+
+.image
+{
+	width: 100%;
+}
+
+
+.Cart
+{
+    width: 3500px;	height: 550px; /* Размеры */
+    background: #fc0; /* Цвет фона */
+    outline: 2px solid #000; /* Чёрная рамка */
+    border: 3px solid #fff; /* Белая рамка */
+    border-radius: 10px; /* Радиус скругления */
+}
